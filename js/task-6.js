@@ -36,8 +36,10 @@ input.oninput = function () {
         input.classList.remove("valid");
         input.classList.remove("invalid");
     }
-    if (input.value.length !== inTotLenght && input.value.length !== 0) {
+   
+    if (input.value.length !== inTotLenght && input.value.length !== 0 ) {
         input.classList.add("invalid");
+        input.classList.remove("valid");
     }
 }
 

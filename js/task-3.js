@@ -28,44 +28,53 @@ const images = [
   },
 ];
 
+// const imageEl = document.createElement('img');
+// imageEl.src = images.url;
+// imageEl.alt = images.alt;
+// imageEl.width = 500;
+// imageEl.width = 400;
+// console.log('imageEl', imageEl);
+
+
+// const galleryEl = document.querySelector('#gallery');
+// galleryEl.classList.add('gallery');
+
+// const makeGalleryContainer = () => {
+//   return `<li class="gallery-item">
+//     <img src="${imageEl.src}" alt="${imageEl.alt}" >
+//   </li>`;
+// };
+
+// ul.append(imageEl);
+
+// for (let image of images)
+//   document.querySelector('#gallery')
+//     .insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" width = 400, higth= 400 alt="${image.alt}"></li>`);
 
 
 
-for (let image of images)
-  document.querySelector('#gallery')
-    .insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" width = 400, higth= 400 alt="${image.alt}"></li>`);
-// el.classList.add(cls)
+// const createGalleryItem = ({ url, alt }) =>
+//   <li><img src="${url}" alt="${alt}" width = 200 height = 150></li>;
+// const galleryMarkup = images.reduce(
+//   (acc, item) => acc + createGalleryItem(item),
+//   ""
+// );
+// const galleryList = document.querySelector("#gallery");
+// galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
+// galleryList.setAttribute("style", "list-style-type:none; display: flex;");
 
-// const imagesLi = document.querySelector('#gallery')
-// const elLi = [];
-// for (let i = 0; i < images.length; i+=1) {
-//   const image = images[i];
-//   const newEl = document.createElement('li');
-//   newEl.textContent = image;
-//   elLi.push(newEl)
-// }
-// console.log(elLi);
+const galerysEl = ({ url, alt }) => {
+  return `
+    <li>
+        <img src="${url}" alt="${alt}" width=480 >
+    </li>`;
+};
 
-// // imagesLi.append(...elLi)
+const makeImagesGalery = images.map(galerysEl).join('');
 
-
-
-// const imagesImg = document.querySelector('#gallery')
-// const elImg = [];
-// for (let i = 0; i < images.length; i+=1) {
-//   const image = images[i];
-//   const newEl = document.createElement('img');
-//   newEl.textContent = image.url;
-//   elImg.push(newEl)
-// }
-// console.log(elImg);
-
-// // imagesImg.append(...elImg)
-
-// imagesLi.appendChild(...imagesImg)
-// const galleryUl = document.querySelector('#gallery');
-// // galleryUl.append(elLi, elImg)
+const idGalery = document.querySelector('#gallery');
+idGalery.insertAdjacentHTML('beforeend', makeImagesGalery);
 
 
-// // const ulEl = document.querySelector('#gallery');
+
 
