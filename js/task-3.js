@@ -33,7 +33,7 @@ const images = [
 
 for (let image of images)
   document.querySelector('#gallery')
-    .insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" width = 320, higth= 320 alt="${image.alt}"></li>`);
+    .insertAdjacentHTML('beforeEnd', `<li><img src="${image.url}" width = 400, higth= 400 alt="${image.alt}"></li>`);
 // el.classList.add(cls)
 
 // const imagesLi = document.querySelector('#gallery')
